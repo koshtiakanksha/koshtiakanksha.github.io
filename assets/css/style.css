@@ -227,8 +227,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;  /* Changed from left */
   z-index: 2;
   min-width: 300px;
-  margin-left: 10%;  /* Added */
-  padding-left: 20px;  /* Added */
+  margin-right: 10%;  /* Added */
+  padding-right: 20px;  /* Added */
 }
 
 /* Rest of the styles remain the same */
@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 30px;
   }
   #hero .hero-container {
-    margin-left: 5%;  /* Added for better mobile spacing */
+    margin-right: 5%;  /* Added for better mobile spacing */
   }
 }
 
