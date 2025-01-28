@@ -327,6 +327,28 @@ section {
   color: #173b6c;
 }
 
+.about-me {
+  font-family: inherit; /* Inherits the font style from the rest of the website */
+  line-height: 1.8; /* Increases line spacing for readability */
+}
+
+.about-me p {
+  margin-bottom: 1.5rem; /* Adds spacing between paragraphs */
+}
+
+.about-me h4 {
+  margin-top: 2rem; /* Adds spacing above headings */
+  margin-bottom: 1rem; /* Adds spacing below headings */
+}
+
+.about-me ul {
+  margin-top: 1rem; /* Adds spacing above the list */
+  margin-bottom: 1.5rem; /* Adds spacing below the list */
+}
+
+.about-me li {
+  margin-bottom: 0.8rem; /* Adds spacing between list items */
+}
 
 /*--------------------------------------------------------------
 # Skills
