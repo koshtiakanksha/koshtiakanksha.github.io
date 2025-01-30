@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   min-width: 300px;
   margin-right: 10%;  /* Added */
-  padding-right: 20px;  /* Added */
+  padding-right: 50px;  /* Added */
 }
 
 /* Rest of the styles remain the same */
