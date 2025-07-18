@@ -477,6 +477,78 @@ Pursuing an MBA is my way of building those skills the same way I once built log
   </div>
 </section><!-- End Resume Section -->
 
+    <section id="featured" class="resume section-bg">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Featured Moments</h2>
+      <p style="font-weight: normal;">A few highlights from competitions and experiences that shaped my journey</p>
+    </div>
+
+        <div class="row">
+      <div class="profile">
+        <img src="assets/img/creative_vision.jpg" alt="Creative Vision Award" class="img-fluid rounded-circle">
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up">
+        <br />
+        <h3>Creative Vision Award – Applied AI Challenge Winner</h3>
+        <div class="resume-item pb-0">
+          <p>
+            Our team won the Applied AI Challenge at Iowa State University under the guidance of Prof. Abram Anders.  
+            Our project, Accessible AI, aims to bridge communication gaps for individuals with speech and hearing impairments using real-time speech, text, and sign translation.  
+            We were honored to receive the Creative Vision Award for this work and are grateful to everyone who supported us.
+          </p>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="profile">
+        <img src="assets/img/rvcc.jpg" alt="RVCC Pitch" class="img-fluid rounded-circle">
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up">
+        <br />
+        <h3>Top 12 Finalist – Regnier Venture Creation Challenge</h3>
+        <div class="resume-item pb-0">
+          <p>
+            Selected as one of the top 12 teams out of 80 applicants from 8 universities to present Accessible AI at UMKC's RVCC.  
+            We pitched to over 20 judges including founders, professors, and industry leaders.  
+            The experience taught us the depth of entrepreneurship—from feasibility planning to financial pitching—and gave us the confidence to take our venture forward.
+          </p>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="profile">
+        <img src="assets/img/ivy_bmc.jpg" alt="Ivy Business Model" class="img-fluid rounded-circle">
+      </div>
+
+      <div class="col-lg-8" data-aos="fade-up">
+        <br />
+        <h3>Ivy Business Model Canvas Competition – Presenter</h3>
+        <div class="resume-item pb-0">
+          <p>
+            Presented Accessible AI at the Ivy Create Something Business Model Canvas Competition.  
+            We built a compelling pitch covering our solution, market, and revenue strategy.  
+            While we did not advance to the final round, being selected among top teams and presenting to leaders like Mike Lerman, Judy Eyles, and Professor Sanchez was a powerful learning experience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+        <div class="row">
+      <div class="col-12 text-center mt-4">
+        <p>For more updates and behind-the-scenes stories, <a href="https://www.linkedin.com/in/koshtiakanksha/" target="_blank">visit my LinkedIn</a>.</p>
+      </div>
+    </div>
+
+  </div> <!-- container -->
+</section>
+
+
  <!-- ======= Certification Section ======= -->
     <section id="certifications" class="skills section-bg">
       <div class="container">
@@ -543,7 +615,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
   <script>
   async function fetchMediumPosts() {
     const rssToJson = "https://api.rss2json.com/v1/api.json?rss_url=";
-    const feedUrl = "https://medium.com/feed/@koshtiakanksha";
+    const feedUrl = "https://medium.com/feed/@koshtiakanksha12";
 
     try {
       const res = await fetch(rssToJson + encodeURIComponent(feedUrl));
@@ -567,6 +639,15 @@ Pursuing an MBA is my way of building those skills the same way I once built log
 
         container.appendChild(div);
       });
+
+      // Add "See more" link
+      const moreLink = document.createElement("div");
+      moreLink.className = "col-12 text-center mt-3";
+      moreLink.innerHTML = `
+        <p>For more posts, <a href="https://medium.com/@koshtiakanksha" target="_blank">click here</a>.</p>
+      `;
+      container.appendChild(moreLink);
+
     } catch (error) {
       console.error("Failed to fetch Medium posts", error);
     }
