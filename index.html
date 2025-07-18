@@ -399,12 +399,13 @@ Pursuing an MBA is my way of building those skills the same way I once built log
   <div class="container">
     <div class="section-title">
       <h2>Blog</h2>
-      <p>Latest posts from my Medium blog</p>
+      <p style="font-weight: normal;">Latest posts from my Medium blog</p>
     </div>
 
     <div id="medium-posts" class="row"></div>
   </div>
 </section>
+
 
 
 
@@ -542,33 +543,38 @@ Pursuing an MBA is my way of building those skills the same way I once built log
   <script>
   async function fetchMediumPosts() {
     const rssToJson = "https://api.rss2json.com/v1/api.json?rss_url=";
-    const feedUrl = "https://medium.com/feed/@koshtiakanksha12";
+    const feedUrl = "https://medium.com/feed/@koshtiakanksha";
 
-    const res = await fetch(rssToJson + encodeURIComponent(feedUrl));
-    const data = await res.json();
+    try {
+      const res = await fetch(rssToJson + encodeURIComponent(feedUrl));
+      const data = await res.json();
+      const container = document.getElementById("medium-posts");
 
-    const container = document.getElementById("medium-posts");
+      data.items.slice(0, 3).forEach(post => {
+        const div = document.createElement("div");
+        div.className = "col-md-4 mb-4";
 
-    data.items.slice(0, 3).forEach(post => {
-      const div = document.createElement("div");
-      div.className = "col-md-4 mb-4";
+        div.innerHTML = `
+          <div class="resume-item">
+            <a href="${post.link}" target="_blank">
+              <img src="${post.thumbnail}" alt="Post thumbnail" class="img-fluid mb-2 rounded" />
+              <h4>${post.title}</h4>
+            </a>
+            <p><small>${new Date(post.pubDate).toDateString()}</small></p>
+            <p>${post.description.slice(0, 120)}...</p>
+          </div>
+        `;
 
-      div.innerHTML = `
-        <div class="resume-item">
-          <a href="${post.link}" target="_blank">
-            <h4>${post.title}</h4>
-          </a>
-          <p><small>${post.pubDate.split(" ")[0]}</small></p>
-          <p>${post.description.slice(0, 120)}...</p>
-        </div>
-      `;
-
-      container.appendChild(div);
-    });
+        container.appendChild(div);
+      });
+    } catch (error) {
+      console.error("Failed to fetch Medium posts", error);
+    }
   }
 
   fetchMediumPosts();
 </script>
+
 
 </body>
 
