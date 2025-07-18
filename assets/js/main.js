@@ -185,4 +185,10 @@
     aos_init();
   });
 
+  // Desktop navbar toggle
+  $('#navbar-toggle').on('click', function() {
+    $('body').toggleClass('nav-hidden');
+    $('#navbar-toggle i').toggleClass('icofont-navigation-menu icofont-close');
+  });
+  
 })(jQuery);
