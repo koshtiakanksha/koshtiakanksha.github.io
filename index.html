@@ -398,7 +398,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
     <section id="blogs" class="resume section-bg">
   <div class="container">
     <div class="section-title">
-      <h2>Blog</h2>
+      <h3>Blog</h3>
       <p style="font-weight: normal;">Latest posts from my Medium blog</p>
     </div>
 
@@ -492,7 +492,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
 
       <div class="col-lg-8" data-aos="fade-up">
         <br />
-        <h3>Creative Vision Award – Applied AI Challenge Winner</h3>
+        <a href="https://www.linkedin.com/posts/koshtiakanksha_we-are-excited-to-share-that-our-team-has-activity-7303672991148630017-T1uj?utm_source=share&utm_medium=member_desktop&rcm=ACoAACo1WeUBp9umt3mAm0bsW9ibuZzyNwxVhAk"><i class="resume-title"></i> <span><h3>Creative Vision Award – Applied AI Challenge Winner</h3></span></a>
         <div class="resume-item pb-0">
           <p>
             Our team won the Applied AI Challenge at Iowa State University under the guidance of Prof. Abram Anders.  
@@ -510,7 +510,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
 
       <div class="col-lg-8" data-aos="fade-up">
         <br />
-        <h3>Top 12 Finalist – Regnier Venture Creation Challenge</h3>
+        <a href="https://www.linkedin.com/posts/koshtiakanksha_accessibleai-accessibilityforall-rvcc2025-activity-7322342436402278400-w5xb?utm_source=share&utm_medium=member_desktop&rcm=ACoAACo1WeUBp9umt3mAm0bsW9ibuZzyNwxVhAk"><i class="resume-title"></i> <span><h3>Finalist – Regnier Venture Creation Challenge</h3></span></a>
         <div class="resume-item pb-0">
           <p>
             Selected as one of the top 12 teams out of 80 applicants from 8 universities to present Accessible AI at UMKC's RVCC.  
@@ -528,7 +528,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
 
       <div class="col-lg-8" data-aos="fade-up">
         <br />
-        <h3>Ivy Business Model Canvas Competition – Presenter</h3>
+        <a href="https://www.linkedin.com/posts/koshtiakanksha_accessibleai-accessibilityforall-ivycollegeofbusinesss-activity-7319973465841631232-cHJ2?utm_source=share&utm_medium=member_desktop&rcm=ACoAACo1WeUBp9umt3mAm0bsW9ibuZzyNwxVhAk"><i class="resume-title"></i> <span><h3>Ivy Business Model Canvas Competition – Presenter</h3></span></a>
         <div class="resume-item pb-0">
           <p>
             Presented Accessible AI at the Ivy Create Something Business Model Canvas Competition.  
@@ -626,10 +626,14 @@ Pursuing an MBA is my way of building those skills the same way I once built log
         const div = document.createElement("div");
         div.className = "col-md-4 mb-4";
 
+        // Extract image from post.content as fallback
+        const imgMatch = post.content.match(/<img.*?src="(.*?)"/);
+        const thumbnail = imgMatch ? imgMatch[1] : "assets/img/fallback.jpg";
+
         div.innerHTML = `
           <div class="resume-item">
             <a href="${post.link}" target="_blank">
-              <img src="${post.thumbnail}" alt="Post thumbnail" class="img-fluid mb-2 rounded" />
+              <img src="${thumbnail}" alt="Post thumbnail" class="img-fluid mb-2 rounded" />
               <h4>${post.title}</h4>
             </a>
             <p><small>${new Date(post.pubDate).toDateString()}</small></p>
@@ -640,11 +644,10 @@ Pursuing an MBA is my way of building those skills the same way I once built log
         container.appendChild(div);
       });
 
-      // Add "See more" link
       const moreLink = document.createElement("div");
       moreLink.className = "col-12 text-center mt-3";
       moreLink.innerHTML = `
-        <p>For more posts, <a href="https://medium.com/@koshtiakanksha" target="_blank">click here</a>.</p>
+        <p>For more posts, <a href="https://medium.com/@koshtiakanksha12" target="_blank">click here</a>.</p>
       `;
       container.appendChild(moreLink);
 
