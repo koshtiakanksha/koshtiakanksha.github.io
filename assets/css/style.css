@@ -124,12 +124,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.featured-img {␊
+.featured-img {
   width: 250px;
   height: 250px;
-  object-fit: cover;␊
-  object-position: center;␊
-}␊
+  object-fit: cover;
+  object-position: center;
+  padding: 20px;
+  display: block;
+}
+
+.resume .profile img {
+  width: 250px;
+  height: 250px;
+  padding: 20px;
+  display: block;
+}
 
 /*--------------------------------------------------------------
 # Navigation Menu
