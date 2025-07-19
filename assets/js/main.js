@@ -1,5 +1,4 @@
-
-!(function($) {
+(function($) {
   "use strict";
 
   // Hero typed
@@ -190,5 +189,33 @@
     $('body').toggleClass('nav-hidden');
     $('#navbar-toggle i').toggleClass('icofont-navigation-menu icofont-close');
   });
-  
+  // Fetch latest Medium posts
+  async function loadMediumPosts() {
+    const rssToJson = 'https://api.rss2json.com/v1/api.json?rss_url=';
+    const feedUrl = 'https://medium.com/feed/@koshtiakanksha12';
+    try {
+      const res = await fetch(rssToJson + encodeURIComponent(feedUrl) + '&count=3&' + Date.now());
+      const data = await res.json();
+      const container = $('#medium-posts');
+      container.empty();
+      data.items.slice(0, 3).forEach(post => {
+        const imgMatch = post.content.match(/<img.*?src="(.*?)"/);
+        const thumbnail = imgMatch ? imgMatch[1] : 'assets/img/fallback.jpg';
+        const item = `<div class="col-md-4 mb-4 medium-post">
+            <div class="resume-item">
+              <a href="${post.link}" target="_blank">
+                <img src="${thumbnail}" alt="Post thumbnail" class="img-fluid mb-2 rounded" />
+                <p>${post.title}</p>
+              </a>
+              <p><small>${new Date(post.pubDate).toDateString()}</small></p>
+            </div>
+          </div>`;
+        container.append(item);
+      });
+    } catch (err) {
+      console.error('Failed to fetch Medium posts', err);
+    }
+  }
+  $(window).on('load', loadMediumPosts);
+
 })(jQuery);
