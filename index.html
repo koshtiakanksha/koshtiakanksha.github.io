@@ -37,6 +37,7 @@
   <header id="header">
     <div class="d-flex flex-column">
       <div class="profile">
+        <p> </p>
         <h1 class="text-light"><a href="index.html">Akanksha Koshti</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://leetcode.com/Akankshakoshti/" target="_blank" class="leetcode"><i class='bx bxl-python'></i></a>
@@ -91,22 +92,16 @@
           <div class="col-lg-8 about-me">
 
   <p>
-    I am Akanksha. Here is how it all came together.
+    Hey there! I am Akanksha. Here is how it all came together.
   </p>
   <p>
     Math was my first love. I never had to study it twice. I used to spend hours solving puzzles, quizzes, and sudoku. That early joy of solving things never really left me. When I discovered statistics, it felt like math with purpose. I followed that path through undergrad and a master's, learning how things work and why they matter.
-</p>
-  <p>
 Somewhere along the way, I met code. What started as a course requirement quickly became something more. I saw how a few lines could replace hours of manual effort and scale beyond anything I could do by hand. That changed everything. I began building small tools, automating tasks, and solving problems I cared about. The blend of statistics and technology gave me the clarity and confidence to take on real challenges.
 </p>
   <p>
 As I explored different fields, I knew I wanted to work on ideas that help businesses grow and improve how people work. That led me to Information Systems, where I could bring together strategy, systems, and data to build something useful. It also led me to Accessible AI, one of my most meaningful projects so far.
-</p>
-  <p>
 The first time I pitched that venture in front of a panel, I felt everything I had learned come together. It was not just about models or numbers anymore. It was about people, communication, and standing behind a vision. That moment taught me that building solutions is not just technical. It also takes clarity, direction, and the ability to bring others along.
-</p>
-  <p>
-Pursuing an MBA is my way of building those skills the same way I once built logic and code. And somehow, it still feels like solving a puzzle. Different pieces, new challenges, but the same joy I felt when I first opened a math book. The circle feels complete. And I am just getting started.</p>␊
+Pursuing an MBA is my way of building those skills the same way I once built logic and code. And somehow, it still feels like solving a puzzle. Different pieces, new challenges, but the same joy I felt when I first opened a math book. The circle feels complete. And I am just getting started.</p>
           </div>
           <div class="col-lg-4 text-center">
             <img src="assets/img/about-sticker.png" alt="About sticker" class="img-fluid" />
@@ -154,7 +149,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
     <li class="col-md-4">Git and GitHub</li>
     <li class="col-md-4">PostgreSQL</li>
     <li class="col-md-4">Redis</li>
-    <li class="col-md-4">AWS S3</li>
+    <li class="col-md-4">Cloud Computing (AWS, GCP)</li>
   </ul>
 
   <h5 class="mt-4 mb-3"><strong>Core Skills</strong></h5>
@@ -171,8 +166,6 @@ Pursuing an MBA is my way of building those skills the same way I once built log
 
   <h5 class="mt-4 mb-3"><strong>Other Skills</strong></h5>
   <ul class="row">
-    <li class="col-md-4">CRAN Package Development</li>
-    <li class="col-md-4">Roxygen and testthat</li>
     <li class="col-md-4">Technical Writing</li>
     <li class="col-md-4">Public Speaking</li>
   </ul>
@@ -615,54 +608,7 @@ Pursuing an MBA is my way of building those skills the same way I once built log
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <script>
-  async function fetchMediumPosts() {
-    const rssToJson = "https://api.rss2json.com/v1/api.json?rss_url=";
-    const feedUrl = "https://medium.com/feed/@koshtiakanksha12";
-
-    try {
-      const res = await fetch(rssToJson + encodeURIComponent(feedUrl));
-      const data = await res.json();
-      const container = document.getElementById("medium-posts");
-
-      data.items.slice(0, 3).forEach(post => {
-        const div = document.createElement("div");
-        div.className = "col-md-4 mb-4";
-
-        // Extract image from post.content as fallback
-        const imgMatch = post.content.match(/<img.*?src="(.*?)"/);
-        const thumbnail = imgMatch ? imgMatch[1] : "assets/img/fallback.jpg";
-
-        div.innerHTML = `
-          <div class="resume-item">
-            <a href="${post.link}" target="_blank">
-              <img src="${thumbnail}" alt="Post thumbnail" class="img-fluid mb-2 rounded" />
-              <p>${post.title}</p>
-            </a>
-            <p><small>${new Date(post.pubDate).toDateString()}</small></p>
-            <p>${post.description.slice(0, 120)}...</p>
-          </div>
-        `;
-
-        container.appendChild(div);
-      });
-
-      const moreLink = document.createElement("div");
-      moreLink.className = "col-12 text-center mt-3";
-      moreLink.innerHTML = `
-        <p>For more posts, <a href="https://medium.com/@koshtiakanksha12" target="_blank">click here</a>.</p>
-      `;
-      container.appendChild(moreLink);
-
-    } catch (error) {
-      console.error("Failed to fetch Medium posts", error);
-    }
-  }
-
-  fetchMediumPosts();
-</script>
-
-
+  
 </body>
 
 </html>
